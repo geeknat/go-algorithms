@@ -1,12 +1,23 @@
 // Run examples here
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
-	stackExample()
+	container := Container{}
+	stack := container.NewContainer()
+	stack.Push(5)
+	stack.Push(6)
+	stack.Push(7)
+	stack.Push("*")
+	stack.Push("+")
+	stack.Push(1)
+	stack.Push("-")
 
+	fmt.Println(PostFixCalculator(container))
 }
 
 func stackExample() {
